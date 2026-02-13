@@ -42,7 +42,7 @@ def zip_codes_from_location(zip_codes, city_name, state_name):
     city_name = city_name.title()
     state_name = state_name.upper()
     print(city_name, state_name)
-    finded_data = zip_codes.loc[zip_codes[3] == city_name, zip_codes[4] == state_name].values.tolist()
+    finded_data = zip_codes.loc[(zip_codes[3] == city_name) & (zip_codes[4] == state_name)].values.tolist()
     if len(finded_data) == 0:
         print(f"Unknown data. Not found {city_name} and {state_name} zip codes.")
     else:
